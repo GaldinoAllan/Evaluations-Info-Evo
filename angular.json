@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "evolucional"
+    }
+  },
+  "defaultProject": "evolucional",
+  "cli": {
+    "analytics": "9551fe6c-8d19-4283-91dd-03857224e657"
+  }
 }
