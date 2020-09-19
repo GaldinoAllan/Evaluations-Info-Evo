@@ -1,3 +1,9 @@
-.links, .foot{
+.links{
+  margin: 16px;
+}
+
+.foot {
+  position: fixed;
+  bottom: 0px;
   margin: 16px;
 }

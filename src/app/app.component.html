@@ -5,19 +5,18 @@
 <main>
   <div class="links">
     <div>
-      <a routerLink="evaluationinfo">1) getEvaluationsInfo</a>
+      <a [routerLink]="['evaluationinfo']">1) getEvaluationsInfo</a>
     </div>
     <div>
-      <a routerLink="evaluationinfolastfive">2) getLastFiveEvaluationsInfo</a>
+      <a [routerLink]="['evaluationinfo/lastfive']">2) getLastFiveEvaluationsInfo</a>
     </div>
     <div>
-      <a routerLink="showcommonnames">3) common names</a>
+      <a [routerLink]="['showcommonnames']">3) common names</a>
     </div>
   </div>
   <router-outlet></router-outlet>
 </main>
 
 <footer class="foot">
-  <p>Feito com ❤️ por Allan Galdino</p>
-  <p>Copyright &copy; 2020</p>
+  <p>Feito com ❤️ por Allan Galdino - Copyright &copy; 2020</p>
 </footer>
