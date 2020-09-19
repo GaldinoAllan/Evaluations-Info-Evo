@@ -10,15 +10,26 @@ interface Evaluation {
   name: string;
 }
 
+interface Common {
+  id: number;
+  name: string;
+  count: number;
+}
+
 @Component({
-  selector: 'app-last-five-evaluations-info',
-  templateUrl: './last-five-evaluations-info.component.html',
-  styleUrls: ['./last-five-evaluations-info.component.css']
+  selector: 'app-common-names',
+  templateUrl: './common-names.component.html',
+  styleUrls: ['./common-names.component.css']
 })
-export class LastFiveEvaluationsInfoComponent implements OnInit {
-  evaluationsInfo: Evaluation[];
-  evaluationsLastFive: Evaluation[];
+export class CommonNamesComponent implements OnInit {
+  commonnames: Common[];
   evaluationsData: Evaluation[];
+
+  pag: Number = 1;
+  contador: Number = 25;
+
+
+  countCommonNames: number;
 
   constructor(
     private http: HttpClient,
@@ -37,12 +48,16 @@ export class LastFiveEvaluationsInfoComponent implements OnInit {
   }
 
   getCommonEvaluationsData(info: Evaluation[]) {
-    const commonNames = info.filter(
-      (v, i, a) => a.findIndex(t => (t.name === v.name)) === i
-    )
+    let res = Object.values(info.reduce((a, { id, name }) => {
+      a[name] = a[name] || { id, name, count: 0 };
+      a[name].count++;
+      return a;
+    }, Object.create(null)));
 
-    this.evaluationsLastFive = commonNames.slice(
-      Math.max(commonNames.length - 5, 1)
-    )
+    res = res.filter((response: Common) => {
+      return response.count > 1 && response
+    })
+
+    this.commonnames = res as Common[];
   }
 }

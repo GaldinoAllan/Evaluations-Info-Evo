@@ -1,0 +1,27 @@
+<div class="container">
+  <hr />
+  <div>
+    <h3 class="text-info">getCommonNames</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Common</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of commonnames | paginate: { itemsPerPage: contador, currentPage: pag }">
+          <td>{{a.id}}</td>
+          <td>{{a.name}}</td>
+          <td>{{a.count}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--incluindo o controle de paginação.-->
+  <div class="text-right">
+    <pagination-controls (pageChange)="pag = $event"></pagination-controls>
+  </div>
+</div>
