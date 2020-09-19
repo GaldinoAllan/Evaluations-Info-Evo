@@ -48,14 +48,25 @@ export class CommonNamesComponent implements OnInit {
   }
 
   getCommonEvaluationsData(info: Evaluation[]) {
+    // Adicionando a coluna "count" no objeto e fazendo o count de quantas ocorrencias possuem
     let res = Object.values(info.reduce((a, { id, name }) => {
       a[name] = a[name] || { id, name, count: 0 };
       a[name].count++;
       return a;
     }, Object.create(null)));
 
+    // Filtrando o array resposta para pegar apenas os que tem mais de uma ocorrencia
     res = res.filter((response: Common) => {
       return response.count > 1 && response
+    })
+
+    // Ordenando o array resposta do que tem mais ocorrencias para o que tem menos
+    res.sort((a: Common, b: Common) => {
+      if (a.count < b.count) {
+        return 1;
+      } else if (a.count > b.count) {
+        return -1;
+      }
     })
 
     this.commonnames = res as Common[];
