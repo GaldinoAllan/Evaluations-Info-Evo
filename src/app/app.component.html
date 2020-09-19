@@ -1,22 +1,25 @@
-<header>
-  <h1 class="text-secondary text-center">{{ title }}!</h1>
-</header>
+<body class='container'>
+  <header>
+    <h1 class="text-secondary text-center">{{ title }}!</h1>
+  </header>
 
-<main>
-  <div class="links">
-    <div>
-      <a [routerLink]="['evaluationinfo']">1) getEvaluationsInfo</a>
+  <main class="main">
+    <div class="links">
+      <div>
+        <a [routerLink]="['evaluationinfo']">1) getEvaluationsInfo</a>
+      </div>
+      <div>
+        <a [routerLink]="['evaluationinfo/lastfive']">2) getLastFiveEvaluationsInfo</a>
+      </div>
+      <div>
+        <a [routerLink]="['evaluationinfo/commonnames']">3) common names</a>
+      </div>
     </div>
-    <div>
-      <a [routerLink]="['evaluationinfo/lastfive']">2) getLastFiveEvaluationsInfo</a>
-    </div>
-    <div>
-      <a [routerLink]="['showcommonnames']">3) common names</a>
-    </div>
-  </div>
-  <router-outlet></router-outlet>
-</main>
+    <router-outlet></router-outlet>
+  </main>
 
-<footer class="foot">
-  <p>Feito com ❤️ por Allan Galdino - Copyright &copy; 2020</p>
-</footer>
+  <footer class="foot">
+    <p>Feito com ❤️ por Allan Galdino - Copyright &copy; 2020</p>
+  </footer>
+
+</body>
