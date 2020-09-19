@@ -1,10 +1,47 @@
-.links{
-  margin: 16px;
-}
-
 .container{
   position: relative;
   min-height: 100vh;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.logo-img{
+  width: 250px;
+  height: 44px;
+}
+
+.links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-link{
+  border-radius: 8px;
+  height: 48px;
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2ecc71;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.button-link:hover{
+  background: #208C4D;
+}
+
+.button-link-container + div{
+  margin-left: 16px;
 }
 
 .main{

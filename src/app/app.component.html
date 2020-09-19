@@ -1,20 +1,26 @@
 <body class='container'>
   <header>
-    <h1 class="text-secondary text-center">{{ title }}!</h1>
+    <img src="../assets/logo-evolucional.png" alt="EvoLogo" class="logo-img">
+    <div class="links">
+      <div class="button-link-container">
+        <a [routerLink]="['evaluationinfo']" class="button-link">
+          getEvaluationsInfo
+        </a>
+      </div>
+      <div class="button-link-container">
+        <a [routerLink]="['evaluationinfo/lastfive']" class="button-link">
+          getLastFiveEvaluationsInfo
+        </a>
+      </div>
+      <div class="button-link-container">
+        <a [routerLink]="['evaluationinfo/commonnames']" class="button-link">
+          common names
+        </a>
+      </div>
+    </div>
   </header>
 
   <main class="main">
-    <div class="links">
-      <div>
-        <a [routerLink]="['evaluationinfo']">1) getEvaluationsInfo</a>
-      </div>
-      <div>
-        <a [routerLink]="['evaluationinfo/lastfive']">2) getLastFiveEvaluationsInfo</a>
-      </div>
-      <div>
-        <a [routerLink]="['evaluationinfo/commonnames']">3) common names</a>
-      </div>
-    </div>
     <router-outlet></router-outlet>
   </main>
 
